@@ -1,0 +1,5 @@
+D:\Work\algo\DevideAndConquer\FastPower\bin\Debug\FastPower.exe.config
+D:\Work\algo\DevideAndConquer\FastPower\bin\Debug\FastPower.exe
+D:\Work\algo\DevideAndConquer\FastPower\bin\Debug\FastPower.pdb
+D:\Work\algo\DevideAndConquer\FastPower\obj\Debug\FastPower.exe
+D:\Work\algo\DevideAndConquer\FastPower\obj\Debug\FastPower.pdb

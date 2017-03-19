@@ -1,0 +1,8 @@
+D:\Work\algo\DevideAndConquer\CountInversion\bin\Debug\CountInversion.exe.config
+D:\Work\algo\DevideAndConquer\CountInversion\bin\Debug\CountInversion.exe
+D:\Work\algo\DevideAndConquer\CountInversion\bin\Debug\CountInversion.pdb
+D:\Work\algo\DevideAndConquer\CountInversion\obj\Debug\CountInversion.exe
+D:\Work\algo\DevideAndConquer\CountInversion\obj\Debug\CountInversion.pdb
+D:\Work\algo\DevideAndConquer\CountInversion\bin\Debug\IntegerArray.txt
+D:\Work\algo\DevideAndConquer\CountInversion\bin\Debug\IntegerArray2.txt
+D:\Work\algo\DevideAndConquer\CountInversion\obj\Debug\CountInversion.csprojResolveAssemblyReference.cache
