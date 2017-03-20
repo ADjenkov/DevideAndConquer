@@ -5,3 +5,10 @@ D:\Work\DevideAndConquer\QuickSortLinear\obj\Debug\QuickSortLinear.exe
 D:\Work\DevideAndConquer\QuickSortLinear\obj\Debug\QuickSortLinear.pdb
 D:\Work\DevideAndConquer\QuickSortLinear\obj\Debug\QuickSortLinear.csprojResolveAssemblyReference.cache
 D:\Work\DevideAndConquer\QuickSortLinear\bin\Debug\QuickSort.txt
+D:\Work\algo\DevideAndConquerGit\QuickSortLinear\bin\Debug\QuickSortLinear.exe.config
+D:\Work\algo\DevideAndConquerGit\QuickSortLinear\bin\Debug\QuickSort.txt
+D:\Work\algo\DevideAndConquerGit\QuickSortLinear\bin\Debug\QuickSortLinear.exe
+D:\Work\algo\DevideAndConquerGit\QuickSortLinear\bin\Debug\QuickSortLinear.pdb
+D:\Work\algo\DevideAndConquerGit\QuickSortLinear\obj\Debug\QuickSortLinear.csprojResolveAssemblyReference.cache
+D:\Work\algo\DevideAndConquerGit\QuickSortLinear\obj\Debug\QuickSortLinear.exe
+D:\Work\algo\DevideAndConquerGit\QuickSortLinear\obj\Debug\QuickSortLinear.pdb
