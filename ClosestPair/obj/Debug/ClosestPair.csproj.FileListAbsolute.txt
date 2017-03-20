@@ -4,3 +4,9 @@ D:\Work\algo\DevideAndConquer\ClosestPair\bin\Debug\ClosestPair.pdb
 D:\Work\algo\DevideAndConquer\ClosestPair\obj\Debug\ClosestPair.csprojResolveAssemblyReference.cache
 D:\Work\algo\DevideAndConquer\ClosestPair\obj\Debug\ClosestPair.exe
 D:\Work\algo\DevideAndConquer\ClosestPair\obj\Debug\ClosestPair.pdb
+D:\Work\DevideAndConquer\ClosestPair\bin\Debug\ClosestPair.exe.config
+D:\Work\DevideAndConquer\ClosestPair\obj\Debug\ClosestPair.exe
+D:\Work\DevideAndConquer\ClosestPair\obj\Debug\ClosestPair.pdb
+D:\Work\DevideAndConquer\ClosestPair\bin\Debug\ClosestPair.exe
+D:\Work\DevideAndConquer\ClosestPair\bin\Debug\ClosestPair.pdb
+D:\Work\DevideAndConquer\ClosestPair\obj\Debug\ClosestPair.csprojResolveAssemblyReference.cache

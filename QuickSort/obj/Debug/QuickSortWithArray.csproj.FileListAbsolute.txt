@@ -1,0 +1,6 @@
+D:\Work\DevideAndConquer\QuickSort\bin\Debug\QuickSort.exe.config
+D:\Work\DevideAndConquer\QuickSort\bin\Debug\QuickSort.exe
+D:\Work\DevideAndConquer\QuickSort\bin\Debug\QuickSort.pdb
+D:\Work\DevideAndConquer\QuickSort\obj\Debug\QuickSortWithArray.csprojResolveAssemblyReference.cache
+D:\Work\DevideAndConquer\QuickSort\obj\Debug\QuickSort.exe
+D:\Work\DevideAndConquer\QuickSort\obj\Debug\QuickSort.pdb
