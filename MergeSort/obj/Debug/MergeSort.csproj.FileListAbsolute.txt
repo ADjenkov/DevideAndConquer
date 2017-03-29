@@ -4,3 +4,9 @@ D:\Work\algo\DevideAndConquer\MergeSort\bin\Debug\MergeSort.pdb
 D:\Work\algo\DevideAndConquer\MergeSort\obj\Debug\MergeSort.csprojResolveAssemblyReference.cache
 D:\Work\algo\DevideAndConquer\MergeSort\obj\Debug\MergeSort.exe
 D:\Work\algo\DevideAndConquer\MergeSort\obj\Debug\MergeSort.pdb
+D:\Work\DevideAndConquer\MergeSort\bin\Debug\MergeSort.exe.config
+D:\Work\DevideAndConquer\MergeSort\obj\Debug\MergeSort.exe
+D:\Work\DevideAndConquer\MergeSort\obj\Debug\MergeSort.pdb
+D:\Work\DevideAndConquer\MergeSort\bin\Debug\MergeSort.exe
+D:\Work\DevideAndConquer\MergeSort\bin\Debug\MergeSort.pdb
+D:\Work\DevideAndConquer\MergeSort\obj\Debug\MergeSort.csprojResolveAssemblyReference.cache

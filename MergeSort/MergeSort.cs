@@ -10,7 +10,7 @@ namespace MergeSort
     {
         static void Main(string[] args)
         {
-            int[] A = new int[] {666, 14, 31, 25, 4, 74, 32, 66, 33, 65, 666, 1 };
+            int[] A = new int[] {5,3,8,9,1,7,0,2,6,4};
 
             A = mergeSort(A);
 
@@ -75,7 +75,7 @@ namespace MergeSort
             }
 
             Console.WriteLine();
-            //printArray(temp);
+            printArray(temp);
             Console.WriteLine();
 
             return temp;
