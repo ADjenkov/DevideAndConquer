@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MergeSort", "MergeSort\MergeSort.csproj", "{752B5AD9-4073-450D-A006-353C5F2A7D0F}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomContraction", "RandomContraction\RandomContraction.csproj", "{78CBE0F7-25A5-4633-A198-BA78AFDC645B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RandomContractionsList", "RandomContractionsList\RandomContractionsList.csproj", "{AE717966-DAFF-47E4-BB65-A04ECCAEB170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BFS-Undirected", "BFS-Undirected\BFS-Undirected.csproj", "{75ED350C-ACFC-4BED-8F5E-8E838E5EBE22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{AE717966-DAFF-47E4-BB65-A04ECCAEB170}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE717966-DAFF-47E4-BB65-A04ECCAEB170}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE717966-DAFF-47E4-BB65-A04ECCAEB170}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75ED350C-ACFC-4BED-8F5E-8E838E5EBE22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75ED350C-ACFC-4BED-8F5E-8E838E5EBE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75ED350C-ACFC-4BED-8F5E-8E838E5EBE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75ED350C-ACFC-4BED-8F5E-8E838E5EBE22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
