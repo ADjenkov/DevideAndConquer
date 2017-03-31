@@ -22,16 +22,17 @@ namespace Graph
 	{
 		public T value;
 		public bool visited;
-		public List<Edge<T>> EdgesIn;
-		public List<Edge<T>> EdgesOut;
+		public Node<T> leader;
+		public HashSet<Edge<T>> EdgesIn;
+		public HashSet<Edge<T>> EdgesOut;
 		public int distance;
 		public int label;
 
 		public Node(T value)
 		{
 			this.value = value;
-			this.EdgesIn = new List<Edge<T>>();
-			this.EdgesOut = new List<Edge<T>>();
+			this.EdgesIn = new HashSet<Edge<T>>();
+			this.EdgesOut = new HashSet<Edge<T>>();
 			this.visited = false;
 			this.distance = 0;
 		}
@@ -39,8 +40,8 @@ namespace Graph
 		public Node(T value, int label)
 		{
 			this.value = value;
-			this.EdgesIn = new List<Edge<T>>();
-			this.EdgesOut = new List<Edge<T>>();
+			this.EdgesIn = new HashSet<Edge<T>>();
+			this.EdgesOut = new HashSet<Edge<T>>();
 			this.visited = false;
 			this.distance = 0;
 			this.label = label;
@@ -50,7 +51,7 @@ namespace Graph
 	public class Graph<T>
 	{
 		private Dictionary<T, Node<T>> nodes;
-		private List<Edge<T>> edges;
+		private Dictionary<Tuple<T, T>, Edge<T>> edges;
 
 		private bool isDirected;
 
@@ -60,7 +61,7 @@ namespace Graph
 			set { this.nodes = value; }
 		}
 
-		public List<Edge<T>> Edges
+		public Dictionary<Tuple<T, T>, Edge<T>> Edges
 		{
 			get { return this.edges; }
 			set { this.edges = value; }
@@ -70,7 +71,15 @@ namespace Graph
 		{
 			this.isDirected = isDirected;
 			this.nodes = new Dictionary<T, Node<T>>();
-			this.edges = new List<Edge<T>>();
+			this.edges = new Dictionary<Tuple<T, T>, Edge<T>>();
+		}
+
+		public void AddNode(T value, int label = 0)
+		{
+			if (!this.nodes.ContainsKey(value))
+			{
+				this.nodes.Add(value, new Node<T>(value, label));
+			}
 		}
 
 		public void AddNode(T value)
@@ -91,10 +100,13 @@ namespace Graph
 
 		public void AddEdge(Node<T> from, Node<T> to, bool allowParallel = false)
 		{
-			bool isDuplicateEdge = this.edges.Where(edge => (edge.From.value.Equals(from.value) && edge.To.value.Equals(to.value)) ||
-				(edge.From.value.Equals(to.value) && edge.To.value.Equals(from.value))).Any();
+			//bool isDuplicateEdge = this.edges.Where(edge => (edge.From.value.Equals(from.value) && edge.To.value.Equals(to.value)) ||
+			//	(edge.From.value.Equals(to.value) && edge.To.value.Equals(from.value))).Any();
 
-			if (allowParallel || !isDuplicateEdge)
+			bool hasKey = this.edges.ContainsKey(new Tuple<T, T>(from.value, to.value));
+			bool hasReversedKey = this.edges.ContainsKey(new Tuple<T, T>(to.value, from.value));
+
+			if (allowParallel || (!hasKey && !hasReversedKey))
 			{
 				Edge<T> newEdge = new Edge<T>(from, to);
 
@@ -112,7 +124,15 @@ namespace Graph
 					to.EdgesIn.Add(newEdge);
 				}
 
-				this.edges.Add(newEdge);
+				this.edges.Add(new Tuple<T, T>(from.value, to.value), newEdge);
+			}
+		}
+
+		public void ResetVisited()
+		{
+			foreach (var node in this.nodes)
+			{
+				node.Value.visited = false;
 			}
 		}
 
