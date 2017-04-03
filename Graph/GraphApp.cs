@@ -10,15 +10,17 @@ namespace Graph
 	{
 		public Node<T> From;
 		public Node<T> To;
+		public int length;
 
-		public Edge(Node<T> from, Node<T> to)
+		public Edge(Node<T> from, Node<T> to, int length)
 		{
 			this.From = from;
 			this.To = to;
+			this.length = length;
 		}
 	}
 
-	public class Node<T>
+	public class Node<T> : IComparable<Node<T>>
 	{
 		public T value;
 		public bool visited;
@@ -45,6 +47,13 @@ namespace Graph
 			this.visited = false;
 			this.distance = 0;
 			this.label = label;
+		}
+
+		public int CompareTo(Node<T> that)
+		{
+			if (this.distance > that.distance) return 1;
+			if (this.distance == that.distance) return 0;
+			return 1;
 		}
 	}
 
@@ -98,17 +107,14 @@ namespace Graph
 			}
 		}
 
-		public void AddEdge(Node<T> from, Node<T> to, bool allowParallel = false)
+		public void AddEdge(Node<T> from, Node<T> to, bool allowParallel = false, int length = 1)
 		{
-			//bool isDuplicateEdge = this.edges.Where(edge => (edge.From.value.Equals(from.value) && edge.To.value.Equals(to.value)) ||
-			//	(edge.From.value.Equals(to.value) && edge.To.value.Equals(from.value))).Any();
-
 			bool hasKey = this.edges.ContainsKey(new Tuple<T, T>(from.value, to.value));
 			bool hasReversedKey = this.edges.ContainsKey(new Tuple<T, T>(to.value, from.value));
 
 			if (allowParallel || (!hasKey && !hasReversedKey))
 			{
-				Edge<T> newEdge = new Edge<T>(from, to);
+				Edge<T> newEdge = new Edge<T>(from, to, length);
 
 				if (this.isDirected)
 				{
@@ -124,7 +130,10 @@ namespace Graph
 					to.EdgesIn.Add(newEdge);
 				}
 
-				this.edges.Add(new Tuple<T, T>(from.value, to.value), newEdge);
+				if (!hasKey && !hasReversedKey)
+				{
+					this.edges.Add(new Tuple<T, T>(from.value, to.value), newEdge);
+				}
 			}
 		}
 
