@@ -27,7 +27,7 @@ namespace DijkstraShortestPath
 			source = graph.Nodes[1];
 
 			DijkstraHeap(graph, source);
-			//Dijkstra(graph, source);
+			//DijkstraLinear(graph, source);
 
 			//CORRECT ANSWER 2599,2610,2947,2052,2367,2399,2029,2442,2505,3068
 			Console.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9}", A[7], A[37], A[59], A[82], A[99], A[115], A[133], A[165], A[188], A[197]);
@@ -102,9 +102,8 @@ namespace DijkstraShortestPath
 			}
 		}
 
-		static void Dijkstra(Graph<int> graph, Node<int> sourceNode)
+		static void DijkstraLinear(Graph<int> graph, Node<int> sourceNode)
 		{
-
 			A.Add(source.value, 0);
 			X.Add(sourceNode);
 
