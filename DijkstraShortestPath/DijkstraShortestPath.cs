@@ -6,33 +6,30 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Priority_Queue;
 
 namespace DijkstraShortestPath
 {
+	//INFO: Using Priority Queue https://github.com/BlueRaja/High-Speed-Priority-Queue-for-C-Sharp/wiki/Using-the-SimplePriorityQueue
 	class DijkstraShortestPath
 	{
 		static Dictionary<int, int> A;
-		static Dictionary<int, List<Node<int>>> B;
 		static HashSet<Node<int>> X;
 		static Node<int> source;
 
 		static void Main(string[] args)
 		{
 			A = new Dictionary<int, int>();
-			B = new Dictionary<int, List<Node<int>>>();
 			X = new HashSet<Node<int>>();
 
-			//Graph<int> graph = new Graph<int>(true); for the commented sample 
 			Graph<int> graph = new Graph<int>(true);
 
 			string line;
-
-			for (int i = 1; i < 201; i++) //875715
+			for (int i = 1; i < 201; i++)
 			{
 				graph.AddNode(i);
 			}
 
-			//The graph should have nodes 875714 and 5105043 edges
 			StreamReader file = new StreamReader(@"dijkstraData.txt");
 			while ((line = file.ReadLine()) != null)
 			{
@@ -49,17 +46,6 @@ namespace DijkstraShortestPath
 				}
 			}
 
-			//graph.AddNode('s');
-			//graph.AddNode('v');
-			//graph.AddNode('w');
-			//graph.AddNode('t');
-
-			//graph.AddEdge(graph.Nodes['s'], graph.Nodes['v'], true, 1);
-			//graph.AddEdge(graph.Nodes['s'], graph.Nodes['w'], true, 4);
-			//graph.AddEdge(graph.Nodes['v'], graph.Nodes['w'], true, 2);
-			//graph.AddEdge(graph.Nodes['v'], graph.Nodes['t'], true, 6);
-			//graph.AddEdge(graph.Nodes['w'], graph.Nodes['t'], true, 3);
-
 			source = graph.Nodes[1];
 
 			DijkstraHeap(graph, source);
@@ -71,64 +57,41 @@ namespace DijkstraShortestPath
 
 		static void DijkstraHeap(Graph<int> graph, Node<int> sourceNode)
 		{
-			A.Add(source.value, 0);
-			X.Add(sourceNode);
-
-			var heap = new C5.IntervalHeap<Node<int>>();
+			SimplePriorityQueue<Node<int>> heap = new SimplePriorityQueue<Node<int>>();
 
 			foreach (var item in graph.Nodes)
 			{
 				if (item.Value != source)
 				{
-					heap.Add(item.Value);
+					heap.Enqueue(item.Value, Int32.MaxValue);
+					setShortestPath(item.Value.value, Int32.MaxValue);
+
+				}
+				else
+				{
+					heap.Enqueue(item.Value, 0);
 				}
 			}
 
-			for (int i = 1; i < graph.Count; i++)
+			setShortestPath(source.value, 0);
+
+			while (heap.Any())
 			{
-				foreach (var unexploredNode in heap)
-				{
-					int minLength = 1000000;
+				var minItem = heap.Dequeue();
 
-					foreach (var edgeIn in unexploredNode.EdgesIn)
-					{
-						if (X.Contains(edgeIn.From))
-						{
-							if (minLength > edgeIn.From.distance + edgeIn.length)
-							{
-								minLength = edgeIn.From.distance + edgeIn.length;
-							}
-						}
-					}
-
-					unexploredNode.distance = minLength;
-					setShortestPath(unexploredNode.value, minLength);
-				}
-
-				X.Add(heap.Min());
-
-				foreach (var edgeOut in heap.Min().EdgesOut)
+				foreach (var edgeOut in minItem.EdgesOut)
 				{
 					if (heap.Contains(edgeOut.To))
 					{
-						edgeOut.To.distance = Math.Min(edgeOut.To.distance, A[edgeOut.From.value] + edgeOut.length);
-						setShortestPath(edgeOut.To.value, Math.Min(A[edgeOut.To.value], A[edgeOut.From.value] + edgeOut.length));
+						int alt = A[minItem.value] + edgeOut.length;
+
+						if (alt < A[edgeOut.To.value])
+						{
+							setShortestPath(edgeOut.To.value, alt);
+							heap.UpdatePriority(edgeOut.To, alt);
+						}
 					}
 				}
-
-				heap.DeleteMin();
-			}
-		}
-
-		static void setShortestPath(int s, int value)
-		{
-			if (A.ContainsKey(s))
-			{
-				A[s] = value;
-			}
-			else
-			{
-				A.Add(s, value);
 			}
 		}
 
@@ -161,6 +124,18 @@ namespace DijkstraShortestPath
 
 				X.Add(minEdge.To);
 				A.Add(minEdge.To.value, minLength);
+			}
+		}
+
+		static void setShortestPath(int s, int value)
+		{
+			if (A.ContainsKey(s))
+			{
+				A[s] = value;
+			}
+			else
+			{
+				A.Add(s, value);
 			}
 		}
 	}
