@@ -29,7 +29,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KosarajuDFS", "KosarajuDFS\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DijkstraShortestPath", "DijkstraShortestPath\DijkstraShortestPath.csproj", "{AF2619BF-2EAE-4AB6-A915-048043C190C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMinHeap", "MyMinHeap\MyMinHeap.csproj", "{55436A09-FA5E-4D68-9949-D539EEB22EBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyHeap", "MyMinHeap\MyHeap.csproj", "{55436A09-FA5E-4D68-9949-D539EEB22EBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedianMaintenance", "MedianMaintenance\MedianMaintenance.csproj", "{AF18B828-6873-416A-A704-98BB2463F199}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -122,6 +124,12 @@ Global
 		{55436A09-FA5E-4D68-9949-D539EEB22EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55436A09-FA5E-4D68-9949-D539EEB22EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55436A09-FA5E-4D68-9949-D539EEB22EBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF18B828-6873-416A-A704-98BB2463F199}.asd|Any CPU.ActiveCfg = Release|Any CPU
+		{AF18B828-6873-416A-A704-98BB2463F199}.asd|Any CPU.Build.0 = Release|Any CPU
+		{AF18B828-6873-416A-A704-98BB2463F199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF18B828-6873-416A-A704-98BB2463F199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF18B828-6873-416A-A704-98BB2463F199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF18B828-6873-416A-A704-98BB2463F199}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

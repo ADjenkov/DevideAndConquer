@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyMinHeapApp.cs" />
+    <Compile Include="MyHeap.cs" />
+    <Compile Include="MyMaxHeap.cs" />
+    <Compile Include="MyMinHeap.cs" />
+    <Compile Include="MyHeapApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

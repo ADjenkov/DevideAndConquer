@@ -108,7 +108,7 @@ namespace DijkstraShortestPath
 		{
 			//SimplePriorityQueue<Node<int>> heap = new SimplePriorityQueue<Node<int>>();
 
-			MyMinHeap.MyHeap<Node<int>> heap = new MyMinHeap.MyHeap<Node<int>>();
+			MyHeap.MyMinHeap<Node<int>> heap = new MyHeap.MyMinHeap<Node<int>>();
 
 			foreach (var item in graph.Nodes)
 			{
