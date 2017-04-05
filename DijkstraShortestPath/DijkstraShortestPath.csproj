@@ -56,6 +56,10 @@
       <Project>{cc2a3d59-0438-449e-bf34-f496b485c23d}</Project>
       <Name>Graph</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyMinHeap\MyMinHeap.csproj">
+      <Project>{55436a09-fa5e-4d68-9949-d539eeb22ebf}</Project>
+      <Name>MyMinHeap</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="dijkstraData.txt">
