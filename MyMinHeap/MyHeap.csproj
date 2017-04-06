@@ -43,8 +43,8 @@
   <ItemGroup>
     <Compile Include="MyHeap.cs" />
     <Compile Include="MyMaxHeap.cs" />
-    <Compile Include="MyMinHeap.cs" />
     <Compile Include="MyHeapApp.cs" />
+    <Compile Include="MyMinHeap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
