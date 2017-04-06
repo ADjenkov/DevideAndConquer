@@ -8,9 +8,19 @@ namespace MyHeap
 {
 	public class MyMaxHeap<T> : MyHeap<T>
 	{
-		public T getMax()
+		public T GetMax()
 		{
 			return this.removeItem(0).item;
+		}
+
+		public T Max()
+		{
+			if (this.Count != 0)
+			{
+				return this.ElementAt(0).item;
+			}
+
+			return default(T);
 		}
 
 		protected override void heapifyDown(int latestIndex)

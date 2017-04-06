@@ -130,7 +130,7 @@ namespace DijkstraShortestPath
 
 			while (heap.Count > 0)
 			{
-				var minItem = heap.getMin();
+				var minItem = heap.GetMin();
 				X.Add(minItem);
 
 				foreach (var edgeOut in minItem.EdgesOut)

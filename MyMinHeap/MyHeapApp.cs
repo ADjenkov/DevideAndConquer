@@ -50,11 +50,11 @@ namespace MyHeap
 
 
 
-			var s = heap.getMax();
+			var s = heap.GetMax();
 
 			heap.Remove(14);
 
-			var s2 = heap.getMax();
+			var s2 = heap.GetMax();
 
 		}
 	}
