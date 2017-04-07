@@ -9,6 +9,9 @@ namespace BinaryTree
 	public class Leaf<T>
 	{
 		public int key;
+
+		//TODO: Sizes should be updated after insertion and deletion
+		public int size;
 		public Leaf<T> parent;
 		public Leaf<T> leftChild;
 		public Leaf<T> rightChild;
@@ -41,6 +44,7 @@ namespace BinaryTree
 			this.parent = parent;
 			this.leftChild = leftChild;
 			this.rightChild = rightChild;
+			this.size = 0;
 		}
 	}
 
@@ -62,6 +66,38 @@ namespace BinaryTree
 			this.count = 0;
 		}
 
+		public int GetSize(Leaf<T> node)
+		{
+			int sizeL = 0;
+
+			if (node.leftChild != null)
+			{
+				sizeL = GetSize(node.leftChild);
+			}
+
+			int sizeR = 0;
+
+			if (node.rightChild != null)
+			{
+				sizeR = GetSize(node.rightChild);
+			}
+
+			return sizeL + sizeR + 1;
+		}
+
+		public int GetSize(int key)
+		{
+			var node = this.Search(this.Root, key);
+
+			if (node != null)
+			{
+				return this.GetSize(node);
+			}
+
+			return -1;
+		}
+
+		//Implement Predecessor by Leaf
 		public Leaf<T> Predecessor(int key)
 		{
 			Leaf<T> findKeyLeaf = this.Search(this.root, key);
@@ -110,7 +146,15 @@ namespace BinaryTree
 				}
 				else
 				{
-					//TODO: Implement 
+					//TODO: Should be implemented
+
+					//var predecessor = this.Predecessor(itemToDelete.key);
+
+					//if (predecessor != null)
+					//{
+					//	this.swapItems(itemToDelete, predecessor);
+					//	this.Delete(itemToDelete.key);
+					//}
 				}
 			}
 		}
@@ -230,6 +274,61 @@ namespace BinaryTree
 			return null;
 		}
 
+		private void swapItems(Leaf<T> nodeToDelete, Leaf<T> nodeToReplace)
+		{
+			//var nodeToReplaceParent = nodeToReplace.parent;
+			//var nodeToDeleteParent = nodeToDelete.parent;
+
+			//if (nodeToDeleteParent != null)
+			//{
+			//	nodeToReplace.parent = nodeToDeleteParent;
+
+			//	if (nodeToDeleteParent.leftChild.key == nodeToDelete.key)
+			//	{
+			//		nodeToDeleteParent.leftChild = nodeToReplace;
+			//	}
+			//	else if (nodeToDeleteParent.rightChild.key == nodeToDelete.key)
+			//	{
+			//		nodeToDeleteParent.rightChild = nodeToReplace;
+			//	}
+			//}
+
+			//if (nodeToReplaceParent != null)
+			//{
+			//	nodeToDelete.parent = nodeToReplace.parent;
+
+			//	if (nodeToReplaceParent.leftChild.key == nodeToReplace.key)
+			//	{
+			//		nodeToReplaceParent.leftChild = nodeToDelete;
+			//	}
+			//	else if (nodeToReplaceParent.rightChild.key == nodeToReplace.key)
+			//	{
+			//		nodeToReplaceParent.rightChild = nodeToDelete;
+			//	}
+			//}
+
+			//if (nodeToDelete.leftChild != null)
+			//{
+			//	nodeToDelete.leftChild.parent = nodeToReplace;
+			//}
+
+			//if (nodeToDelete.rightChild != null)
+			//{
+			//	nodeToDelete.rightChild.parent = nodeToReplace;
+			//}
+
+			//if (nodeToReplace.leftChild != null)
+			//{
+			//	nodeToReplace.leftChild.parent = nodeToDelete;
+			//}
+
+			//if (nodeToReplace.rightChild != null)
+			//{
+			//	nodeToReplace.rightChild.parent = nodeToDelete;
+			//}
+
+		}
+
 		private void deleteNodeWithSingleChild(Leaf<T> node)
 		{
 			Leaf<T> leafToRedirect = node.leftChild;
@@ -271,7 +370,8 @@ namespace BinaryTree
 			var max = btree.Max(btree.Root);
 
 			btree.PrintInOrder(btree.Root);
-			var pred = btree.Predecessor(23);
+
+			var size = btree.GetSize(23);
 		}
 	}
 }
